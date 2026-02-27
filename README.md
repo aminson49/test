@@ -2,8 +2,7 @@
 
 ```mermaid
 flowchart LR
-    aks["AKS cluster - Azure VNet consumer"] --> nsg["Azure NSG / firewall"]
-    nsg --> psc_ep["GCP PSC Endpoint - in consumer VPC"]
+    aks["AKS cluster - Azure VNet consumer"] --> psc_ep["GCP PSC Endpoint - in consumer VPC"]
     psc_ep --> sa["PSC Service Attachment - provider"]
     sa --> ilb[GCP Internal Load Balancer]
     ilb --> ig[Instance Group / backends]
